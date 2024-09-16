@@ -1,59 +1,48 @@
-# TODO APP README
+# TODO List - API .NET e Aplicação Angular
 
-This README provides instructions on how to run the .NET 8 project locally and with Docker Compose.
+Este projeto consiste em uma **API .NET 8** para gerenciar uma TODO list e uma aplicação **Angular** que consome essa API para gerenciar os itens.
 
-## Pre Requisites
+## Pré-requisitos
 
-Before running the project, ensure that you have the following installed on your machine:
+Para rodar o projeto localmente, você precisa ter instalado:
 
-- .NET 8 SDK
-- Docker
-- Docker Compose
+- **Node.js** e **npm**: [Download Node.js](https://nodejs.org/)
+- **.NET SDK** (versão 8 ou superior): [Download .NET](https://dotnet.microsoft.com/download)
+- **Docker** e **Docker Compose**: [Download Docker](https://www.docker.com/products/docker-desktop)
+- **Angular CLI** (instalar via npm): `npm install -g @angular/cli`
 
-## Running Locally
+## Testes Unitários
 
-To run the project locally, follow these steps:
+### 1. Testes da API .NET
 
-1. Clone the repository to your local machine.
-2. Open a terminal and navigate to the project directory.
-3. Run the following command to restore the project dependencies:
+Execute os testes da API com:
 
-   ```bash
-   dotnet restore
-   ```
+```bash
+dotnet test
+```
 
-4. Build the project using the following command:
+## Executar Smoke Tests com .http
 
-   ```bash
-   dotnet build
-   ```
+Para testar os endpoints da API, você pode usar arquivos .http e o Visual Studio Code com a extensão REST Client.
 
-5. Run the project using the following command:
+Abra o arquivo .http no VS Code e use o botão Send Request para realizar as requisições.
 
-   ```bash
-   dotnet run --project src/TodoApi
-   ```
+## Executando com Docker Compose
 
-6. Open your web browser and navigate to `http://localhost:5193` to access the application.
+### 1. Rodar com Docker Compose
 
-## Running with Docker Compose
+Execute os containers da API e da aplicação Angular com:
 
-To run the project with Docker Compose, follow these steps:
+```bash
+docker-compose up -d --build
+```
 
-1. Clone the repository to your local machine.
-2. Open a terminal and navigate to the project directory.
-3. Build the Docker image using the following command:
+Acesse a aplicação no navegador em `http://localhost:4200`.
 
-   ```bash
-   docker-compose build
-   ```
+### 2. Parar os Containers
 
-4. Start the Docker containers using the following command:
+Para parar os containers, execute:
 
-   ```bash
-   docker-compose up
-   ```
-
-5. Open your web browser and navigate to `http://localhost:5000` to access the application.
-
-That's it! You should now be able to run the .NET 8 project locally and with Docker Compose.
+```bash
+docker-compose down
+```

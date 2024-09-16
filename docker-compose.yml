@@ -15,6 +15,14 @@ services:
       sqlserver:
         condition: service_healthy
 
+  webapp:
+    image: todo-web-app
+    container_name: todo-web-app
+    build:
+      context: src/TodoWebApp
+    ports:
+      - "4200:80"
+
   sqlserver:
     image: mcr.microsoft.com/mssql/server
     container_name: sqlserver
