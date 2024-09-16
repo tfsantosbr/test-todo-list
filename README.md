@@ -13,8 +13,6 @@ Para rodar o projeto localmente, você precisa ter instalado:
 
 ## Testes Unitários
 
-### 1. Testes da API .NET
-
 Execute os testes da API com:
 
 ```bash
