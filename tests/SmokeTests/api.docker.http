@@ -1,0 +1,29 @@
+# Definição de variáveis
+@baseUrl = http://localhost:5000
+@todoId = c5e99547-a177-46a5-9fdb-996af5d22b0e
+
+### Criar um novo item de TODO
+POST {{baseUrl}}/v1/todos
+Content-Type: application/json
+
+{
+  "title": "My first task"
+}
+
+### Obter todos os itens de TODO
+GET {{baseUrl}}/v1/todos
+
+### Atualizar um item de TODO
+# Após pegar o ID de um item da resposta do GET anterior, substitua {{todoId}} abaixo
+PUT {{baseUrl}}/v1/todos/{{todoId}}
+Content-Type: application/json
+
+{
+  "title": "Updated task title"
+}
+
+###
+
+### Deletar um item de TODO
+# Substitua {{todoId}} pelo ID real do item que deseja deletar
+DELETE {{baseUrl}}/v1/todos/{{todoId}}
