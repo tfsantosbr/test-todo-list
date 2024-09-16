@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: src/TodoApi/Dockerfile
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings:DefaultConnection=Server=host.docker.internal,1433;Database=master;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True;Connection Timeout=10;
     ports:
       - "5000:8080"
